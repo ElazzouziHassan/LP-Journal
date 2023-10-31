@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(1)->create();
         // News::factory(5)->create();
-        Comment::factory(10)->create();
+        Comment::factory(5)->create();
     }
 }
