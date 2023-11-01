@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,8 @@ Route::get('/users/profile/{user}',[UserController::class,'show'])->name('users.
 Route::get('/users/{user}',[UserController::class,'edit'])->middleware(['auth'])->name('users.edit');
 Route::get('/users/{user}',[UserController::class,'update'])->middleware(['auth'])->name('users.update');
 Route::get('/users/{user}',[UserController::class,'destroy'])->middleware(['auth','admin'])->name('users.destroy');
+
+Route::resource('news', NewsController::class);
 
 
 require __DIR__.'/auth.php';
