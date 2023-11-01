@@ -32,7 +32,7 @@ Route::get('/users',[UserController::class,'index'])->middleware(['auth','admin'
 Route::get('/users/profile/{user}',[UserController::class,'show'])->name('users.show');
 Route::get('/users/{user}',[UserController::class,'edit'])->middleware(['auth'])->name('users.edit');
 Route::get('/users/{user}',[UserController::class,'update'])->middleware(['auth'])->name('users.update');
-
+Route::get('/users/{user}',[UserController::class,'destroy'])->middleware(['auth','admin'])->name('users.destroy');
 
 
 require __DIR__.'/auth.php';
