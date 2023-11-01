@@ -30,5 +30,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/users',[UserController::class,'index'])->middleware(['auth','admin'])->name('users');
 Route::get('/users/profile/{user}',[UserController::class,'show'])->name('users.show');
+Route::get('/users/profile/{user}',[UserController::class,'edit'])->middleware(['auth'])->name('users.show');
+
 
 require __DIR__.'/auth.php';
