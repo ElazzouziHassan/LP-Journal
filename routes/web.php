@@ -30,7 +30,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/users',[UserController::class,'index'])->middleware(['auth','admin'])->name('users');
 Route::get('/users/profile/{user}',[UserController::class,'show'])->name('users.show');
-Route::get('/users/profile/{user}',[UserController::class,'edit'])->middleware(['auth'])->name('users.show');
+Route::get('/users/{user}',[UserController::class,'edit'])->middleware(['auth'])->name('users.edit');
+Route::get('/users/{user}',[UserController::class,'update'])->middleware(['auth'])->name('users.update');
+
 
 
 require __DIR__.'/auth.php';
